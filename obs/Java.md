@@ -27,7 +27,7 @@
 
 [[темы на потом]]
 
-### `Optional<T>`
+### Optional\<T\>
 - Либо значение (не null), либо его отсутствие
 - Optional.of(obj)
 - Optional.ofNullable(obj)
@@ -112,8 +112,57 @@ Collectors
 - partitioningBy(predicate\[, downstreem])
 - 
 
- 
+### Ввод - вывод
+Потоковый ввод вывод
+- inputStream - читать байты
+- OutputStream - писать байты
+- Reader -читать символы
+- Writer - писать символы
 
+#### inputStream
+- int read() -> -1 или 0..255
+- long skip(long n)
+- int available() количество байт, доступных без блокировки
+- void mark(int readlimit)
+- void reset()
+- boolean markSupported()
+
+java.io.File (классика)
+-
+
+java.nio.file.Path\/Paths.Files
+
+Path (Comparable)
+Files
+
+### Многопоточность
+
+Доступ к разделяемую ресурсу
+- Блокировка (mutec, mutual exclusion)
+- Неблокирующий доступ:
+	- Lock-free: гарантируется общий прогресс
+	- Wait-free: гарантируется прогресс в каждом потоке
+Блокирующий доступ
+- Для блокировки испольщуется монитор или лок
+- Один и тот же ресурс должен блокироваться одним и тем же монитором
+- Блокировать надо как чтение так и запись
+
+synhronized
+- synhronized(obj){...}: монитор - obj
+- synhronized void method():{};
+
+потоконебезопастные коллекции
+
+
+java memory model
+
+Атормарность
+
+правила happens before
+
+volatile
+
+singleton
  
 
 
