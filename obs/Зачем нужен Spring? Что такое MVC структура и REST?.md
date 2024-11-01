@@ -49,3 +49,4 @@ Citations:
 [6] https://restfulapi.net/rest-architectural-constraints/
 [7] https://ru.wikipedia.org/wiki/REST
 [8] https://hibernate.org/orm/
+
