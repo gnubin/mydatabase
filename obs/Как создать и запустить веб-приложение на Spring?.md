@@ -1,3 +1,4 @@
+* * *
 Для создания и запуска веб-приложения на Spring, вы можете следовать следующим шагам:
 
 ### 1. Настройка проекта
@@ -122,12 +123,5 @@ public class HomeController {
 
 Следуя этим шагам, вы сможете создать и запустить простое веб-приложение на Spring с использованием MVC структуры. Вы можете расширять функциональность, добавляя больше контроллеров, моделей и представлений, а также интегрируя другие технологии, такие как Spring Data JPA для работы с базами данных.
 
-Citations:
-[1] https://habr.com/ru/articles/226663/
-[2] https://javastudy.ru/spring-mvc/java-config-web-xml/
-[3] https://javarush.com/quests/lectures/questspring.level04.lecture39
-[4] https://devcolibri.com/spring-3-javaconfig-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B5-spring-mvc/
-[5] https://habr.com/ru/articles/479286/
-[6] https://www.youtube.com/watch?v=A4iCQYoI4Cs
-[7] https://javarush.com/quests/lectures/questspring.level04.lecture03
-[8] https://www.youtube.com/watch?v=stuAmyyootQ
+* * *
+#java  
