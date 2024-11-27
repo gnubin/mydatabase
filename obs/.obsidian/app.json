@@ -3,5 +3,5 @@
   "showUnsupportedFiles": true,
   "tabSize": 2,
   "newFileLocation": "current",
-  "attachmentFolderPath": "/"
+  "attachmentFolderPath": "./"
 }
