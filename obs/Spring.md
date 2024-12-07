@@ -1,6 +1,6 @@
 [[IoC и DI]]
 [[AOP]]
-Hibirnate
+[[Hibirnate]]
 Spring MVC
 Spring MVC + Hibernate + AOP
 Spring Rest
