@@ -1,7 +1,7 @@
 [[IoC и DI]]
 [[AOP]]
 [[Hibirnate]]
-Spring MVC
+[[Spring MVC]]
 Spring MVC + Hibernate + AOP
 Spring Rest
 Spring Security
