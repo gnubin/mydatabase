@@ -3,6 +3,7 @@
 [[HEALTH]]
 [[MENTAL HEALTH]]
 
+
 [[RELATIONSHIP]]
 [[FAMILY]]
 [[HABITS]]
@@ -22,7 +23,7 @@
 АНАТОМИЯ
 [[AI]]
 [[ЛЮДИ]]
-[[ПРОГРАММИРОВАНИЕ]]
+[[PROGRAMMING]]
 ПСИХОЛОГИЯ
 [[СУДОСТРОЕНИЕ]]
 [[PHILOSOPHIC]]

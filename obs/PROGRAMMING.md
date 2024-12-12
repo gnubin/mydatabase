@@ -1,3 +1,9 @@
+[[app set up]]
+
+
+
+
+
 Пет проекты:
 - Pizzaedof
 - Kenter
@@ -11,8 +17,6 @@ https://learngitbranching.js.org/?locale=ru_RU
 https://stepik.org/course/73/promo
 
 ### Навыки для изучения
-- [[Требования разных резюме на python junior]]
-
 
 [https://t.me/vladnineplusone](https://t.me/vladnineplusone "https://t.me/vladnineplusone")  
 [https://www.youtube.com/@vladnineplusone/videos](https://www.youtube.com/@vladnineplusone/videos "https://www.youtube.com/@vladnineplusone/videos")  
@@ -48,11 +52,3 @@ https://stepik.org/course/73/promo
   
 https://www.youtube.com/watch?v=4X1faVfvPpU&list=WL&index=6
 
-
-**VisPy**  
-  
-VisPy — это библиотека для визуализации данных в Python, предназначенная для создания высокопроизводительных интерактивных визуализаций. Она использует библиотеку OpenGL для рендеринга и обеспечивает доступ к графическим возможностям вашего компьютера через современный Python API.  
-  
-После установки библиотеки, вы можете создать графические приложения с использованием VisPy. В примере на картинке создается окно с красным треугольником. VisPy предоставляет широкие возможности для создания 2D и 3D визуализаций, а также возможность работы с пользовательским вводом, анимациями и интерактивностью.  
-  
-Вы можете найти дополнительные примеры и документацию на официальном сайте [VisPy](https://vispy.org/ "https://vispy.org/"), чтобы более подробно изучить возможности этой библиотеки и начать создавать собственные визуализации.

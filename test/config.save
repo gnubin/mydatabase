@@ -1,0 +1,160 @@
+# Установка модификатора (Mod4 — обычно это клавиша Super/Windows)
+set $mod Mod4
+
+# Указание шрифта для окон
+font pango:monospace 10
+
+# Автозапуск приложений с использованием autostart-скриптов
+exec --no-startup-id dex --autostart --environment i3
+
+# Автозапуск блокировки экрана с поддержкой энергосбережения
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# Запуск апплета сети (NetworkManager)
+exec --no-startup-id nm-applet
+
+# Команда для обновления i3status
+set $refresh_i3status killall -SIGUSR1 i3status
+
+# Управление громкостью через мультимедийные клавиши
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Модификатор для перехода в режим плавающих окон
+floating_modifier $mod
+
+# Установка модификатора для изменения размера окон
+tiling_drag modifier titlebar
+
+# Запуск терминала Alacritty с помощью модификатора + Enter
+bindsym $mod+Return exec alacritty
+
+# Закрытие окна
+bindsym $mod+Shift+q kill
+
+# Запуск Rofi (менеджер приложений)
+bindsym $mod+d exec --no-startup-id rofi -font "hack 10" -show run
+
+# Навигация между окнами с помощью клавиш-модификаторов
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# Навигация с использованием стрелок
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Перемещение окон в заданном направлении
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# Аналогичное перемещение окон с использованием стрелок
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Разделение окон по горизонтали или вертикали
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# Переключение окна в полноэкранный режим
+bindsym $mod+f fullscreen toggle
+
+# Установка различных раскладок окон
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Переключение между плавающим и стандартным режимом окна
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# Фокус на родительское окно
+bindsym $mod+a focus parent
+
+# Настройка рабочих пространств
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Переход на рабочие пространства
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# Перемещение окна на рабочие пространства
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Перезагрузка конфигурации i3wm
+bindsym $mod+Shift+c reload
+
+# Перезапуск i3wm
+bindsym $mod+Shift+r restart
+
+# Подтверждение выхода из сессии i3wm
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Вы уверены, что хотите выйти?' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Режим изменения размера окон
+mode "resize" {
+    bindsym j resize shrink width 5 px or 5 ppt
+    ...
+    bindsym Return mode "default"
+}
+
+# Вызов режима изменения размера
+bindsym $mod+r mode "resize"
+
+# Конфигурация строки состояния
+bar {
+    status_command i3status
+}
+
+# Установка переключения языков клавиатуры (Alt+Shift)
+exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
+
+# Запуск браузера Chromium через F1
+bindsym $mod + F1 exec chromium
+
+# Включение Num Lock при старте
+exec --no-startup-id numlockx on
+
+# Установка границ окон
+default_border pixel
+
+# Автозапуск обоев через скрипт
+exec --no-startup-id ~/mydatabase/bashScripts/change_wallpaper.sh
+
+# Запуск композитора для прозрачности
+exec --no-startup-id picom -f &
