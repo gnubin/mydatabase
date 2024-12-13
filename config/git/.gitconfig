@@ -1,0 +1,65 @@
+[user]
+    name = Victor Babich
+    email = vialbabich02@gmail.com
+
+[core]
+    editor = vim 
+
+[alias]
+    st = status  # Показывает статус репозитория
+    co = checkout  # Переключение на другую ветку
+    br = branch  # Управление ветками
+    cm = commit -m  # Коммит с сообщением
+    amend = commit --amend  # Изменение последнего коммита
+    df = diff  # Просмотр изменений
+    dc = diff --cached  # Просмотр изменений, добавленных в индекс (staged)
+    lg = log --oneline --graph --decorate --all  # Просмотр истории с графом
+
+    # Работа с ветками
+    nb = "!f() { git checkout -b \"$1\"; }; f"  # Создание и переключение на новую ветку
+    delbr = branch -d  # Удаление локальной ветки
+    delbrf = branch -D  # Принудительное удаление локальной ветки
+    pub = push -u origin HEAD  # Публикация текущей ветки на удалённый репозиторий
+
+    # Слияние и ребейз
+    rb = rebase  # Ребейз
+    rbc = rebase --continue  # Продолжение ребейза после разрешения конфликтов
+    rba = rebase --abort  # Отмена ребейза
+    mt = mergetool  # Запуск инструмента для разрешения конфликтов
+
+    # Работа с удалённым репозиторием
+    pl = pull  # Получение изменений
+    pf = pull --ff-only  # Получение изменений только с fast-forward
+    ps = push  # Отправка изменений
+    psf = push --force  # Принудительная отправка изменений
+    po = push origin  # Отправка изменений в origin
+    plr = pull --rebase  # Pull с ребейзом вместо merge
+
+    # Работа с тегами
+    tg = tag  # Список тегов
+    nta = "!f() { git tag \"$1\"; git push origin \"$1\"; }; f"  # Создание и публикация нового тега
+
+    # Очистка
+    cleanall = "!git reset --hard && git clean -fd"  # Удаление всех локальных изменений и неотслеживаемых файлов
+
+    # Удобный log
+    hist = log --pretty=format:'%C(yellow)%h%Creset %ad | %s%d [%an]' --graph --date=short  # История коммитов с красивым форматом
+    last = log -1 HEAD  # Последний коммит
+    shortlog = shortlog -sn  # Статистика коммитов (количество коммитов по пользователям)
+
+    # Вспомогательные
+    whoami = "!git config user.name && git config user.email"  # Проверка текущих имени и email
+    undo = reset --soft HEAD~1  # Отмена последнего коммита, сохраняя изменения
+    unstage = reset HEAD  # Удаление файлов из индекса (staged)
+    ignore = "!gi() { echo \"$1\" >> .gitignore && git add .gitignore; }; gi"  # Добавление строки в .gitignore и индексация
+
+
+[merge]
+#    tool = vimdiff  # Инструмент для слияния конфликтов
+
+[push]
+#    default = simple  # Упрощенное поведение для git push
+
+[color]
+    ui = true  # Цветная подсветка в консоли
+
