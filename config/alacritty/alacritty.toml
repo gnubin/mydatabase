@@ -4,6 +4,7 @@ TERM = "xterm-256color"
 [window]
 padding.x = 20
 padding.y = 20
+decorations = "None" 
 
 opacity = 0.8
 blur = false
@@ -16,16 +17,16 @@ size = 10.0
 #offset_x = 0.0 
 #offset_y = 0.0 
 
-[cursor]
-style = "Beam"
-blink = true  
+#[cursor]
+#style = "Beam"
+#blink = true  
 
-[[key_bindings]]
-key = "Equals"
-mods = "Control"
-action = "IncreaseFontSize"
+#[[key_bindings]]
+#key = "Equals"
+#mods = "Control"
+#action = "IncreaseFontSize"
 
-[[key_bindings]]
-key = "Minus"
-mods = "Control"
-action = "DecreaseFontSize"
+#[[key_bindings]]
+#key = "Minus"
+#mods = "Control"
+#action = "DecreaseFontSize"
