@@ -1,50 +1,88 @@
+### [[Bean scope]]
+### [[Life cycle]]
+
 ***
-Spring Container 
+## Inversion of Control
+### Основные функции, которые выполняет Spring Container:
+- IоС — инверсия управления - это создание и управление объектами
+	IoC — аутсорсинг создания и управления объектами. Т.е. передача программистом прав на создание и управление объектами Spring-y.
 
-IoC -это аутсорсинг создания и управления объектами.
-DI - это аутсорсинг добавления и внедрения зависимостей. делает объекты слабо зависимыми друг от дуга
+Spring Веаn -  это объект, который создаётся и управляется Spring Container
+### Способы конфигурации Spring Container:
+- XML file (устаревший способ)
+- Annotations + XML file (современный способ)
+- Java code (современный способ)
 
-- XML file
-- XML file and annotation 
-- annotation
+Конфигурация XML файла:
+```java
+ClassPathXmlApplicationContext context =  
+        new ClassPathXmlApplicationContext("applicationContext.xml");
+///Создание контекста
+```
+```xml
+<bean id = "myPet"  
+      class = "com.mytest.introduction.Dog">  
+</bean>
+```
+<bean id = "myPet"
+class —
+" ioc . Cat" >
+</bean>
+- id - идентификатор бина
+- class - полное имя класса
+## Dependency lnjection
+- DI — Dependency lnjection- это внедрение зависимостей
+	Dl — аутсорсинг добавления/внедрения зависимостей. Он делает объекты нашего приложения слабо зависимыми друг от друга. 
+### Способы внедрения зависимостей:
+- С помощью конструктора
+```xml
+<bean id = "myPerson"  
+      class="com.mytest.introduction.Person">  
+    <constructor-arg ref="myPet"/>  
+</bean>
+```
+- С помощью сеттеров
+```xml
+<bean id = "myPerson"  
+      class="com.mytest.introduction.Person">  
+    <property name="pet" ref="myPet"/>  
+    <property name="name" value="Babich"/>  
+	<property name="age" value="22"/>
+	<property name="age" value="${person.age}"/> //через file.properties
+</bean>
+
+/// Указание файла
+<context:property-placeholder location="classpath:myApp.properties"/>
+```
 
 
-Bean scope - область видимости бина
-- singleton
-	- создается сразу после прочтения конфига
-	- общий для кто запросит его запрашивает
-	- подходит для stateless объектов
-- prototype
-	- создается только после обращения через getBean
-	- для каждого такого обращения создается новый бин
-	- подходит для stateful объектов
-- request
-- session
-- global-session
-
-жизненный цикл бина
-1. запуск приложения
-2. начало работы Spring Container
-3. создание бина
-4. внедрение завис
-5. init()
-6. бин готов к использованию
-7. исп бина
-8. конец работы Spring Container
-9. destroy()
-10. остановка приложения
-
-init() и destroy() methods
-- могут возвращать что угодно, но чаще void
-- модификатор доступа может быть любой
-- не должно быть параметров
+- @Autowired
+	- В конструкторе
+		```java
+@Autowired  
+public Person(Pet pet) {  
+this.pet = pet;  
+}
+```
+	- В сеттере (в любом методе)
+```java
+@Autowired  
+public void setPet(Pet pet) {  
+    System.out.println("Class Person: setPet");  
+    this.pet = pet;  
+}
+```
+- Для поля
 
 ### Конфигурация при помощи аннотации
 
-Аннотации - это метаданные, которые нужны для передачи определенной информации
+Аннотации - это метаданные, которые нужны для передачи определенной информации.
+```xml
+<context:component-scan base-package="com.mytest.introduction"/>
+```
 
-@Component
-\- создает бин
+@Component("beanId") - создает бин
+
 Процесс состоит из 2 этапов:
 1. Сканирование классов и поиск аннотаций @Component
 2. Создание (регистрация) бина в Spring Container
@@ -60,18 +98,23 @@ init() и destroy() methods
  - сеттер
  - поле
 
-@Qualifire
-\- указывает конкретный бин когда их несколько
+@Qualifire - указывает конкретный бин когда их несколько
+- для конструктора пишется как параметр
 
-@Value
-@Scope
-@PostConstruct
-@PreDestroy
+
+@Value - внедряет значение полю (напрямую или через file.properties)
+@Scope - задает scope для бина
+@PostConstruct - метод выполняется после создания бина
+@PreDestroy - метод выполняется после закрытия контекста
 
 @Configuration - указывает что класс конфиг 
-@ComponentScan("путь к файлу") - указываем какой класс сканировать
-@Bean
-@PropertySource("путь к файлу")
+@ComponentScan("путь к файлу") - указываем какой пакет сканировать
+@PropertySource("путь к файлу") - указывает на file.properties
+
+@Bean - создает бин в конфиг классе
+
+
+
 
 ***
 #java #spring 

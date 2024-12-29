@@ -1,4 +1,5 @@
-QУ[[IoC и DI]]
+***
+[[IoC и DI]]
 [[AOP]]
 [[Hibirnate]]
 [[Spring MVC]]
