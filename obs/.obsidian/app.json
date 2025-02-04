@@ -2,8 +2,9 @@
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": true,
   "tabSize": 2,
-  "newFileLocation": "current",
-  "attachmentFolderPath": "./",
+  "newFileLocation": "root",
+  "attachmentFolderPath": "/attachment",
   "showLineNumber": false,
-  "readableLineLength": false
+  "readableLineLength": false,
+  "showIndentGuide": false
 }

@@ -1,4 +1,7 @@
 {
   "theme": "obsidian",
-  "interfaceFontFamily": ""
+  "interfaceFontFamily": "",
+  "accentColor": "#de8282",
+  "textFontFamily": "FiraCode Nerd Font",
+  "baseFontSizeAction": true
 }
