@@ -3,7 +3,10 @@
 [[HEALTH]]
 [[MENTAL HEALTH]]
 
+<<<<<<< HEAD
 123
+=======
+>>>>>>> origin/main
 [[RELATIONSHIP]]
 [[FAMILY]]
 [[HABITS]]
@@ -16,19 +19,14 @@
 [[BLOG]]
 [[MONEY]]
 [[РЕПЕТИТОРСТВО]]
-[[TELEGRAM BOTS]]
 
 # БАЗА
-АНАТОМИЯ
 [[AI]]
 [[PERSON]]
 [[PROGRAMMING]]
-ПСИХОЛОГИЯ
-[[СУДОСТРОЕНИЕ]]
-[[PHILOSOPHIC]]
 # ХОББИ
 [[BOOKS]]
 [[FILMS]]
-ПУТЕШЕСТВИЯ
+
 
 
