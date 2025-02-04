@@ -3,15 +3,12 @@
 [[HEALTH]]
 [[MENTAL HEALTH]]
 
-<<<<<<< HEAD
 123
-=======
->>>>>>> origin/main
 [[RELATIONSHIP]]
 [[FAMILY]]
 [[HABITS]]
 [[GOALS]]
-
+123
 # Проекты
 [[LABLE]]
 [[BIOGRAPHIC]]
